@@ -7,7 +7,7 @@ exports.sourceNodes = async ({ actions }) => {
   // fetch raw data from the randomuser api
   const fetchStreams = () =>
     axios.get(
-      `https://api.twitch.tv/kraken/streams/?clientid=cjkthp60bf0qp91mn6ifki1h52pic8`,
+      `https://api.twitch.tv/kraken/streams/?limit=10&clientid=cjkthp60bf0qp91mn6ifki1h52pic8`,
       { headers: { "Client-ID": client_id } }
     )
   // await for results
