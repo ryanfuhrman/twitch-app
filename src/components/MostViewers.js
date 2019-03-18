@@ -1,5 +1,9 @@
 import React, { Component } from "react"
-import { TopStreamsDiv, StreamerStyles } from "./styles/TopStreamsStyles"
+import {
+  TopStreamsDiv,
+  StreamerStyles,
+  NumberOfStreamers,
+} from "./styles/TopStreamsStyles"
 import axios from "axios"
 
 class TopStreams extends Component {
@@ -15,7 +19,7 @@ class TopStreams extends Component {
       headers: { "Client-ID": client_id },
     }).then(res => {
       const streams = res.data
-      console.log("kraken", res.data)
+
       this.setState({
         ...streams,
       })
@@ -26,13 +30,12 @@ class TopStreams extends Component {
     const client_id = "cjkthp60bf0qp91mn6ifki1h52pic8"
 
     if (this.state.limit !== prevState.limit) {
-      console.log("state has changed!")
       axios({
         url: `https://api.twitch.tv/kraken/streams/?limit=${this.state.limit}`,
         headers: { "Client-ID": client_id },
       }).then(res => {
         const streams = res.data
-        console.log("kraken", res.data)
+
         this.setState({
           ...streams,
         })
@@ -42,7 +45,6 @@ class TopStreams extends Component {
 
   handleChange = e => {
     let val = e.target.value
-    console.log(parseInt(val, 10), typeof parseInt(val, 10))
     this.setState({
       limit: parseInt(val, 10),
     })
@@ -51,17 +53,19 @@ class TopStreams extends Component {
   render() {
     return (
       <div>
-        <p>
-          Viewing top
+        <NumberOfStreamers>
+          Viewing top{" "}
           <input
             type="number"
+            id="number-of-streamers"
+            name="number of streamers"
             min="3"
             max="100"
             defaultValue={this.state.limit}
             onChange={this.handleChange}
           />
-          /100 streamers.
-        </p>
+          /100 live streamers with the most viewers.
+        </NumberOfStreamers>
 
         <TopStreamsDiv>
           {this.state.streams.map(stream => {

@@ -42,4 +42,10 @@ const StreamerStyles = styled.div`
   }
 `
 
-export { TopStreamsDiv, StreamerStyles }
+const NumberOfStreamers = styled.div`
+  input {
+    width: 40px;
+  }
+`
+
+export { TopStreamsDiv, StreamerStyles, NumberOfStreamers }
