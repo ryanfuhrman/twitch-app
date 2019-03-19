@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const TopStreamsDiv = styled.div`
+const MostViewersDiv = styled.div`
   margin: 5vh 0;
   display: grid;
   grid-template-columns: auto;
@@ -13,15 +13,19 @@ const StreamerStyles = styled.div`
   grid-column: 2;
   display: grid;
   grid-template-columns: [col-1] 1fr [col-2] 1fr;
-  grid-gap: 2vw;
+  grid-gap: 0 3vw;
   grid-template-areas:
     "logo name"
     "logo viewers"
     "logo game"
-    "logo url";
+    "logo status";
 
   .streamer-field {
     margin: 0;
+
+    .field-name {
+      font-weight: bold;
+    }
   }
 
   .name {
@@ -34,18 +38,21 @@ const StreamerStyles = styled.div`
     grid-area: game;
     max-width: 250px;
   }
-  .url {
-    grid-area: url;
+  .status {
+    max-width: 250px;
   }
   .logo {
     grid-area: logo;
+    img {
+      min-width: 100px;
+    }
   }
 `
 
 const NumberOfStreamers = styled.div`
   input {
-    width: 40px;
+    width: 50px;
   }
 `
 
-export { TopStreamsDiv, StreamerStyles, NumberOfStreamers }
+export { MostViewersDiv, StreamerStyles, NumberOfStreamers }
