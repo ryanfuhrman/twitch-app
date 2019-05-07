@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-import { TopStreamsDiv, StreamerStyles } from "./styles/TopStreamsStyles"
 import axios from "axios"
+
+import { TopStreamsDiv, StreamerStyles } from "./styles/TopStreamsStyles"
 
 class TopStreams extends Component {
   state = {
@@ -54,8 +55,10 @@ class TopStreams extends Component {
           Viewing top
           <input
             type="number"
+            name="number of streamers"
             min="3"
             max="100"
+            step="5"
             defaultValue={this.state.limit}
             onChange={this.handleChange}
           />

@@ -1,10 +1,11 @@
 import React, { Component } from "react"
+import axios from "axios"
+
 import {
   MostViewersDiv,
   StreamerStyles,
   NumberOfStreamers,
 } from "./styles/MostViewersStyles"
-import axios from "axios"
 
 class MostViewers extends Component {
   state = {
@@ -74,11 +75,12 @@ class MostViewers extends Component {
         <NumberOfStreamers>
           Viewing top{" "}
           <input
-            type="number"
+            type="numnber"
             id="number-of-streamers"
             name="number of streamers"
             min="3"
             max="100"
+            step="5"
             defaultValue={this.state.limit}
             onChange={this.handleCountChange}
           />
@@ -117,7 +119,12 @@ class MostViewers extends Component {
                   <span className="field-name">Status:</span>{" "}
                   {stream.channel.status}
                 </p>
-                <a href={stream.channel.url} className="streamer-field logo">
+                <a
+                  href={stream.channel.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="streamer-field logo"
+                >
                   <img
                     src={stream.channel.logo}
                     alt="This streamer has no logo. LAME"

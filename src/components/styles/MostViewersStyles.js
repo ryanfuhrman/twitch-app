@@ -12,7 +12,7 @@ const StreamerStyles = styled.div`
   max-width: 700px;
   grid-column: 2;
   display: grid;
-  grid-template-columns: [col-1] 1fr [col-2] 1fr;
+  grid-template-columns: [col-1] 1fr [col-2] 2fr;
   grid-gap: 0 3vw;
   grid-template-areas:
     "logo name"
@@ -36,10 +36,10 @@ const StreamerStyles = styled.div`
   }
   .game {
     grid-area: game;
-    max-width: 250px;
+    /* max-width: 250px; */
   }
   .status {
-    max-width: 250px;
+    /* max-width: 250px; */
   }
   .logo {
     grid-area: logo;
