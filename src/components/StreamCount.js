@@ -8,16 +8,20 @@ export default class StreamCount extends Component {
 
   render() {
     return (
-      <input
-        type="number"
-        id="number-of-streamers"
-        name="number of streamers"
-        min="5"
-        max="100"
-        step="5"
-        defaultValue={this.props.limit}
-        onChange={this.handleCountChange}
-      />
+      <div>
+        Viewing the{" "}
+        <input
+          type="number"
+          id="number-of-streamers"
+          name="number of streamers"
+          min="5"
+          max="100"
+          step="5"
+          defaultValue={this.props.limit}
+          onChange={this.handleCountChange}
+        />
+        streamers with the most viewers.
+      </div>
     )
   }
 }
