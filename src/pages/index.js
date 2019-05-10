@@ -1,6 +1,6 @@
 import React from "react"
 
-import MostViewers from "../components/MostViewers"
+import MostViewers from "../components/MostViewers/MostViewers"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
