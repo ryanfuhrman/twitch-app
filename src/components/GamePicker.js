@@ -6,9 +6,7 @@ class GamePicker extends Component {
     if (e.target.value === "all") {
       val = "\x00"
     }
-    console.log(this.props)
-    // console.log(val)
-    // this.props.onGameChange(val)
+    this.props.onChangeGame(val)
   }
 
   render() {

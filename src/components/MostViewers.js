@@ -6,6 +6,7 @@ import {
   StreamerStyles,
   NumberOfStreamers,
 } from "./styles/MostViewersStyles"
+import GamePicker from "./GamePicker"
 
 class MostViewers extends Component {
   state = {
@@ -59,14 +60,8 @@ class MostViewers extends Component {
     })
   }
 
-  handleGameChange = e => {
-    let val = e.target.value
-    if (e.target.value === "all") {
-      val = "\x00"
-    }
-    this.setState({
-      game: val,
-    })
+  handleGame = game => {
+    this.setState({ game })
   }
 
   render() {
@@ -75,10 +70,10 @@ class MostViewers extends Component {
         <NumberOfStreamers>
           Viewing top{" "}
           <input
-            type="numnber"
+            type="number"
             id="number-of-streamers"
             name="number of streamers"
-            min="3"
+            min="5"
             max="100"
             step="5"
             defaultValue={this.state.limit}
@@ -86,23 +81,7 @@ class MostViewers extends Component {
           />
           /100 live streamers with the most viewers.
         </NumberOfStreamers>
-        <div>
-          Game:{" "}
-          <select name="game" id="game" onChange={this.handleGameChange}>
-            <option defaultValue value="all">
-              All
-            </option>
-            <option value="fortnite">Fortnite</option>
-            <option value="apex legends">Apex Legends</option>
-            <option value="grand theft auto v">Grand Theft Auto V</option>
-            <option value="league of legends">League of Legends</option>
-            <option value="counter-strike: global offensive">
-              Counter-Strike: Global Offensive
-            </option>
-            <option value="dota 2">Dota 2</option>
-          </select>
-        </div>
-
+        <GamePicker onChangeGame={this.handleGame} />
         <MostViewersDiv>
           {this.state.streams.map(stream => {
             return (
