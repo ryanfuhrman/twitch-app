@@ -7,6 +7,7 @@ import {
   NumberOfStreamers,
 } from "./styles/MostViewersStyles"
 import GamePicker from "./GamePicker"
+import StreamCount from "./StreamCount"
 
 class MostViewers extends Component {
   state = {
@@ -53,8 +54,7 @@ class MostViewers extends Component {
     }
   }
 
-  handleCountChange = e => {
-    let val = e.target.value
+  handleCount = val => {
     this.setState({
       limit: parseInt(val, 10),
     })
@@ -69,15 +69,9 @@ class MostViewers extends Component {
       <div>
         <NumberOfStreamers>
           Viewing top{" "}
-          <input
-            type="number"
-            id="number-of-streamers"
-            name="number of streamers"
-            min="5"
-            max="100"
-            step="5"
-            defaultValue={this.state.limit}
-            onChange={this.handleCountChange}
+          <StreamCount
+            limit={this.state.limit}
+            onCountChange={this.handleCount}
           />
           /100 live streamers with the most viewers.
         </NumberOfStreamers>
