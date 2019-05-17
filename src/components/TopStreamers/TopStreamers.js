@@ -3,7 +3,7 @@ import axios from "axios"
 
 import GamePicker from "../GamePicker"
 import StreamCount from "../StreamCount"
-import Streamers from "../Streamer/Streamer"
+import Streamer from "../Streamer/Streamer"
 import TopStreamersStyled from "./TopStreamersStyled"
 
 class MostViewers extends Component {
@@ -72,8 +72,9 @@ class MostViewers extends Component {
         <TopStreamersStyled>
           {this.state.streams.map(stream => {
             return (
-              <Streamers
+              <Streamer
                 key={stream._id}
+                id={stream._id}
                 name={stream.channel.name}
                 viewers={stream.viewers}
                 game={stream.channel.game}
