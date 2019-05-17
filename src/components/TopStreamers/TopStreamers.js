@@ -22,7 +22,6 @@ class MostViewers extends Component {
       headers: { "Client-ID": client_id },
     }).then(res => {
       const streams = res.data
-      console.log(streams)
       this.setState({
         ...streams,
       })
