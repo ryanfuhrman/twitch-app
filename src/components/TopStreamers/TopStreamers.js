@@ -3,7 +3,7 @@ import axios from "axios"
 
 import GamePicker from "../GamePicker"
 import StreamCount from "../StreamCount"
-import Streamers from "../Streamers/Streamers"
+import Streamers from "../Streamer/Streamer"
 import TopStreamersStyled from "./TopStreamersStyled"
 
 class MostViewers extends Component {
