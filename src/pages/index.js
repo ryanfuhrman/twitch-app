@@ -1,6 +1,6 @@
 import React from "react"
 
-import MostViewers from "../components/MostViewers/MostViewers"
+import TopStreamers from "../components/TopStreamers/TopStreamers"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,7 +11,7 @@ const IndexPage = () => (
       title="Home"
       keywords={[`ryan fuhrman`, `twitch`, `react`, `gatsby`]}
     />
-    <MostViewers />
+    <TopStreamers />
   </Layout>
 )
 
