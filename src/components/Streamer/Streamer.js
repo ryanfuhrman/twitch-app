@@ -2,9 +2,9 @@ import React from "react"
 
 import StreamerStyled from "./StreamerStyled"
 
-const Streamers = ({ key, name, viewers, game, status, url, logo }) => {
+const Streamer = ({ id, name, viewers, game, status, url, logo }) => {
   return (
-    <StreamerStyled key={key}>
+    <StreamerStyled key={id}>
       <h2 className="streamer-field name">{name}</h2>
       <p className="streamer-field viewers">
         <span className="field-name">Viewers:</span> {viewers}
@@ -27,4 +27,4 @@ const Streamers = ({ key, name, viewers, game, status, url, logo }) => {
   )
 }
 
-export default Streamers
+export default Streamer
