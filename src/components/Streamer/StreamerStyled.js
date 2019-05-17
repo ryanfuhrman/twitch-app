@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const StreamersStyled = styled.div`
+const StreamerStyled = styled.div`
   margin: 0 auto;
   max-width: 700px;
   grid-column: 2;
@@ -42,4 +42,4 @@ const StreamersStyled = styled.div`
   }
 `
 
-export default StreamersStyled
+export default StreamerStyled

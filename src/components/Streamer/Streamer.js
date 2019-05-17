@@ -1,10 +1,10 @@
 import React from "react"
 
-import StreamersStyled from "./StreamersStyled"
+import StreamerStyled from "./StreamerStyled"
 
 const Streamers = ({ key, name, viewers, game, status, url, logo }) => {
   return (
-    <StreamersStyled key={key}>
+    <StreamerStyled key={key}>
       <h2 className="streamer-field name">{name}</h2>
       <p className="streamer-field viewers">
         <span className="field-name">Viewers:</span> {viewers}
@@ -23,7 +23,7 @@ const Streamers = ({ key, name, viewers, game, status, url, logo }) => {
       >
         <img src={logo} alt="This streamer has no logo. LAME" />
       </a>
-    </StreamersStyled>
+    </StreamerStyled>
   )
 }
 
