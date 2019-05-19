@@ -1,6 +1,59 @@
 import React, { Component } from "react"
+import axios from "axios"
 
 class GamePicker extends Component {
+  state = {
+    games: [],
+  }
+
+  componentDidMount() {
+    const client_id = "cjkthp60bf0qp91mn6ifki1h52pic8"
+
+    axios({
+      url: `https://api.twitch.tv/kraken/games/top?limit=100`,
+      headers: { "Client-ID": client_id },
+    }).then(res => {
+      const games = res.data.top
+      games.map(result =>
+        this.setState({
+          games: [...this.state.games, result.game.name],
+        })
+      )
+    })
+  }
+
+  handleSearch = e => {
+    const searchMatches = []
+
+    const searchInput = e.target.value.toLowerCase()
+    // console.log(searchInput)
+    const searchLength = searchInput.length
+    if (searchLength < 1) return false
+    this.state.games.forEach(game => {
+      const gameLowerCase = game.toLowerCase()
+      const splitGame = gameLowerCase.split("")
+      const gameArray = splitGame.splice(0, searchLength)
+      if (gameArray.length !== searchLength) return false
+
+      if (searchInput === gameArray.join("")) {
+        // console.log(game)
+        console.log([...searchMatches, game])
+      }
+
+      // for (let i = 0; i < gameArray.length; i++) {
+      //   let gameArray.join(""), searchArray.join("")])
+      //   if (gameArray[i] === searchArray[i]) {
+      //     console.log(game)
+      //   }
+      // }
+
+      // if (gameArray == searchArray) {
+      //   console.log(game)
+      //   // return game
+      // }
+    })
+  }
+
   handleGameChange = e => {
     let val = e.target.value
     if (e.target.value === "all") {
@@ -17,15 +70,17 @@ class GamePicker extends Component {
           <option defaultValue value="all">
             All
           </option>
-          <option value="fortnite">Fortnite</option>
-          <option value="apex legends">Apex Legends</option>
-          <option value="grand theft auto v">Grand Theft Auto V</option>
-          <option value="league of legends">League of Legends</option>
-          <option value="counter-strike: global offensive">
-            Counter-Strike: Global Offensive
-          </option>
-          <option value="dota 2">Dota 2</option>
+          {this.state.games.map(game => (
+            <option key={game} value={game}>
+              {game}
+            </option>
+          ))}
         </select>
+        <input
+          type="text"
+          placeholder="Search games"
+          onChange={this.handleSearch}
+        />
       </div>
     )
   }
