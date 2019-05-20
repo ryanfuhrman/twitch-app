@@ -1,6 +1,6 @@
 import React from "react"
 
-import StreamerStyled from "./StreamerStyled"
+import StreamerStyled from "./styles/StreamerStyled"
 
 const Streamer = ({ id, name, viewers, game, status, url, logo }) => {
   return (

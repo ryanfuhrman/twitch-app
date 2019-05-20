@@ -1,6 +1,6 @@
 import React from "react"
 
-import TopStreamers from "../components/TopStreamers/TopStreamers"
+import TopStreamers from "../components/TopStreamers"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"

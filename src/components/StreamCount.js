@@ -9,7 +9,7 @@ export default class StreamCount extends Component {
   render() {
     return (
       <div>
-        Viewing the{" "}
+        Results:{" "}
         <input
           type="number"
           id="number-of-streamers"
@@ -20,7 +20,6 @@ export default class StreamCount extends Component {
           defaultValue={this.props.limit}
           onChange={this.handleCountChange}
         />
-        streamers with the most viewers.
       </div>
     )
   }

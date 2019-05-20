@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import axios from "axios"
 
-import GamePicker from "../GamePicker"
-import StreamCount from "../StreamCount"
-import Streamer from "../Streamer/Streamer"
-import TopStreamersStyled from "./TopStreamersStyled"
+import GamePicker from "./GamePicker"
+import StreamCount from "./StreamCount"
+import Streamer from "./Streamer"
+import TopStreamersStyled from "./styles/TopStreamersStyled"
 
 class MostViewers extends Component {
   state = {
@@ -63,11 +63,11 @@ class MostViewers extends Component {
   render() {
     return (
       <div>
+        <GamePicker onChangeGame={this.handleGame} />
         <StreamCount
           limit={this.state.limit}
           onCountChange={this.handleCount}
         />
-        <GamePicker onChangeGame={this.handleGame} />
         <TopStreamersStyled>
           {this.state.streams.map(stream => {
             return (
