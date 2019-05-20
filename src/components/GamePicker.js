@@ -46,9 +46,14 @@ class GamePicker extends Component {
   }
 
   handleGameChange = e => {
-    let val = e.value
-    console.log(val)
-    if (e.value === "all") {
+    let val
+    if (e === null) {
+      val = "\x00"
+    } else {
+      val = e.value
+    }
+
+    if (val === "all") {
       val = "\x00"
     }
     this.props.onChangeGame(val)
@@ -62,6 +67,7 @@ class GamePicker extends Component {
           options={this.state.games}
           onChange={this.handleGameChange}
           className="game-search"
+          isClearable
         />
       </div>
     )
