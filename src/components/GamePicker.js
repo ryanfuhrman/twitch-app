@@ -62,12 +62,12 @@ class GamePicker extends Component {
   render() {
     return (
       <div>
-        Game:{" "}
         <Select
           options={this.state.games}
           onChange={this.handleGameChange}
           className="game-search"
           isClearable
+          placeholder="Choose a game..."
         />
       </div>
     )
