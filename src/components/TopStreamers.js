@@ -1,11 +1,9 @@
 import React, { Component } from "react"
 import axios from "axios"
 
-import GamePicker from "./GamePicker"
-import StreamCount from "./StreamCount"
+import SearchOptions from "./SearchOptions"
 import Streamer from "./Streamer"
 import TopStreamersStyled from "./styles/TopStreamersStyled"
-import SearchOptions from "./SearchOptions"
 
 class MostViewers extends Component {
   state = {
