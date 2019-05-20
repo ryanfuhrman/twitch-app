@@ -54,6 +54,7 @@ class GamePicker extends Component {
     } else {
       val = e.value
     }
+
     if (val === "all") {
       val = "\x00"
     }
