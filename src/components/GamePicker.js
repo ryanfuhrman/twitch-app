@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import axios from "axios"
+import Select from "react-select"
 
 class GamePicker extends Component {
   state = {
-    games: [],
+    games: [{ value: "all", label: "All" }],
   }
 
   componentDidMount() {
@@ -16,7 +17,10 @@ class GamePicker extends Component {
       const games = res.data.top
       games.map(result =>
         this.setState({
-          games: [...this.state.games, result.game.name],
+          games: [
+            ...this.state.games,
+            { value: result.game.name, label: result.game.name },
+          ],
         })
       )
     })
@@ -42,8 +46,9 @@ class GamePicker extends Component {
   }
 
   handleGameChange = e => {
-    let val = e.target.value
-    if (e.target.value === "all") {
+    let val = e.value
+    console.log(val)
+    if (e.value === "all") {
       val = "\x00"
     }
     this.props.onChangeGame(val)
@@ -53,20 +58,10 @@ class GamePicker extends Component {
     return (
       <div>
         Game:{" "}
-        <select name="game" id="game" onChange={this.handleGameChange}>
-          <option defaultValue value="all">
-            All
-          </option>
-          {this.state.games.map(game => (
-            <option key={game} value={game}>
-              {game}
-            </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          placeholder="Search games"
-          onChange={this.handleSearch}
+        <Select
+          options={this.state.games}
+          onChange={this.handleGameChange}
+          className="game-search"
         />
       </div>
     )
