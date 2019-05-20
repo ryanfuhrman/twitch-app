@@ -5,6 +5,7 @@ import GamePicker from "./GamePicker"
 import StreamCount from "./StreamCount"
 import Streamer from "./Streamer"
 import TopStreamersStyled from "./styles/TopStreamersStyled"
+import SearchOptions from "./SearchOptions"
 
 class MostViewers extends Component {
   state = {
@@ -63,8 +64,8 @@ class MostViewers extends Component {
   render() {
     return (
       <div>
-        <GamePicker onChangeGame={this.handleGame} />
-        <StreamCount
+        <SearchOptions
+          onGameChange={this.handleGame}
           limit={this.state.limit}
           onCountChange={this.handleCount}
         />

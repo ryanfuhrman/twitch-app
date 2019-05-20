@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import axios from "axios"
 import Select from "react-select"
 
+import GamePickerStyled from "./styles/GamePickerStyled"
+
 class GamePicker extends Component {
   state = {
     games: [{ value: "all", label: "All" }],
@@ -55,12 +57,12 @@ class GamePicker extends Component {
     if (val === "all") {
       val = "\x00"
     }
-    this.props.onChangeGame(val)
+    this.props.onGameChange(val)
   }
 
   render() {
     return (
-      <div>
+      <GamePickerStyled>
         <Select
           options={this.state.games}
           onChange={this.handleGameChange}
@@ -68,7 +70,7 @@ class GamePicker extends Component {
           isClearable
           placeholder="Choose a game..."
         />
-      </div>
+      </GamePickerStyled>
     )
   }
 }
