@@ -52,7 +52,12 @@ class GamePicker extends Component {
     } else {
       val = e.value
     }
+<<<<<<< HEAD
 
+=======
+    // let val = e.value
+    console.log(val)
+>>>>>>> 65c084fb18676d3e71b092ece2e5b8697717143b
     if (val === "all") {
       val = "\x00"
     }
@@ -67,7 +72,10 @@ class GamePicker extends Component {
           onChange={this.handleGameChange}
           className="game-search"
           isClearable
+<<<<<<< HEAD
           placeholder="Choose a game..."
+=======
+>>>>>>> 65c084fb18676d3e71b092ece2e5b8697717143b
         />
       </div>
     )
