@@ -1,4 +1,22 @@
 import React, { Component } from "react"
+import styled from "styled-components"
+
+const StreamsCountStyled = styled.div`
+  #number-of-streamers {
+    border-radius: 4px;
+    border-color: hsl(0, 0%, 80%);
+    border-style: solid;
+    border-width: 1px;
+    min-height: 38px;
+    outline: none;
+    transition: all 100ms;
+
+    :focus {
+      border-color: rgb(74, 148, 244);
+      border-width: 2px;
+    }
+  }
+`
 
 export default class StreamCount extends Component {
   handleCountChange = e => {
@@ -8,7 +26,7 @@ export default class StreamCount extends Component {
 
   render() {
     return (
-      <div>
+      <StreamsCountStyled>
         Results:{" "}
         <input
           type="number"
@@ -20,7 +38,7 @@ export default class StreamCount extends Component {
           defaultValue={this.props.limit}
           onChange={this.handleCountChange}
         />
-      </div>
+      </StreamsCountStyled>
     )
   }
 }
