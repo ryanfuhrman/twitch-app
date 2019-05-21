@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
 const StreamerStyled = styled.div`
-  margin: 0 auto;
+  padding: 1vw;
   max-width: 700px;
-  grid-column: 2;
+  margin: 0 auto;
+  color: #404040;
+  font-size: 18px;
   display: grid;
   grid-template-columns: [col-1] 1fr [col-2] 2fr;
-  grid-gap: 0 3vw;
+  grid-gap: 0 2vw;
   grid-template-areas:
     "logo name"
     "logo viewers"
@@ -23,21 +25,55 @@ const StreamerStyled = styled.div`
 
   .name {
     grid-area: name;
+    font-size: 30px;
   }
   .viewers {
     grid-area: viewers;
   }
   .game {
     grid-area: game;
-    /* max-width: 250px; */
   }
-  /* .status {
-    max-width: 250px;
-  } */
+  .status {
+  }
   .logo {
     grid-area: logo;
+    height: 218px;
+    width: 218px;
+    min-width: 200px;
+    min-height: 200px;
+    cursor: pointer;
     img {
-      min-width: 100px;
+      min-width: 200px;
+      min-height: 200px;
+      margin: 0;
+      position: relative;
+    }
+    :hover {
+      animation: wiggle 0.3s;
+      animation-iteration-count: 1;
+      @keyframes wiggle {
+        0% {
+          transform: translate(1px, -1px);
+        }
+        50% {
+          transform: translate(-1px, 1px);
+        }
+        100% {
+          transform: translate(1px, -1px);
+        }
+      }
+    }
+  }
+
+  :hover {
+    /* background-color: #eef8ff; */
+    color: #050505;
+    /* font-size: 19px; */
+    transform: scale(1.009);
+    transition: all 0.2s ease-in;
+    .name {
+      /* font-size: 31px;
+      transition: all 0.5s; */
     }
   }
 `
