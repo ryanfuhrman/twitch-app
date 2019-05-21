@@ -61,13 +61,13 @@ class MostViewers extends Component {
 
   render() {
     return (
-      <div>
+      <TopStreamersStyled>
         <SearchOptions
           onGameChange={this.handleGame}
           limit={this.state.limit}
           onCountChange={this.handleCount}
         />
-        <TopStreamersStyled>
+        <div className="results">
           {this.state.streams.map(stream => {
             return (
               <Streamer
@@ -82,8 +82,8 @@ class MostViewers extends Component {
               />
             )
           })}
-        </TopStreamersStyled>
-      </div>
+        </div>
+      </TopStreamersStyled>
     )
   }
 }
