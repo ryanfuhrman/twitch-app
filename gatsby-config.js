@@ -28,5 +28,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`karla\:400,700`, `open sans\:400,700`],
+      },
+    },
   ],
 }
