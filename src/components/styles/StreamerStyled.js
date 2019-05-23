@@ -43,6 +43,8 @@ const StreamerStyled = styled.div`
     min-height: 200px;
     cursor: pointer;
     img {
+      height: 218px;
+      width: 218px;
       min-width: 200px;
       min-height: 200px;
       margin: 0;
@@ -70,6 +72,40 @@ const StreamerStyled = styled.div`
     border-left: 5px solid black;
     transform: scale(1.009);
     transition: all 0.2s ease-in;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 650px;
+    margin: 0 25px;
+    .logo {
+      height: 175px;
+      width: 175px;
+      min-height: 160px;
+      min-width: 160px;
+      img {
+        height: 175px;
+        width: 175px;
+        min-height: 160px;
+        min-width: 160px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    max-width: 550px;
+    margin: 0 15px;
+    .logo {
+      height: 150px;
+      width: 150px;
+      min-height: 125px;
+      min-width: 125px;
+      img {
+        height: 150px;
+        width: 150px;
+        min-height: 125px;
+        min-width: 125px;
+      }
+    }
   }
 `
 
