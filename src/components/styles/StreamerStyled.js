@@ -66,15 +66,10 @@ const StreamerStyled = styled.div`
   }
 
   :hover {
-    /* background-color: #eef8ff; */
     color: #050505;
-    /* font-size: 19px; */
+    border-left: 5px solid black;
     transform: scale(1.009);
     transition: all 0.2s ease-in;
-    .name {
-      /* font-size: 31px;
-      transition: all 0.5s; */
-    }
   }
 `
 
