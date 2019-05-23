@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Twitch App`,
-    description: `A simple starter to get up and developing quickly with Gatsby.`,
-    author: `@gatsbyjs`,
+    title: `Twitch Browser`,
+    description: `A simple way to browse the top streamers on Twitch`,
+    author: `@ryanfuhrman`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
