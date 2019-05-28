@@ -6,6 +6,7 @@ const StreamerStyled = styled.div`
   margin: 0 auto;
   color: #404040;
   font-size: 18px;
+  overflow: none;
   display: grid;
   grid-template-columns: [col-1] 1fr [col-2] 2fr;
   grid-gap: 0 2vw;
@@ -104,6 +105,59 @@ const StreamerStyled = styled.div`
         width: 150px;
         min-height: 125px;
         min-width: 125px;
+      }
+    }
+  }
+
+  @media (max-width: 414px) {
+    width: 400px;
+    margin: 0;
+    grid-template-columns: [col-1] 150px [col-2] 1fr;
+    grid-template-areas:
+      "logo name"
+      "logo viewers"
+      "logo game";
+
+    .name {
+      font-size: 26px;
+    }
+
+    .status {
+      display: none;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 365px;
+    grid-template-columns: [col-1] 125px [col-2] 1fr;
+
+    .logo {
+      height: 125px;
+      width: 125px;
+      img {
+        height: 125px;
+        width: 125px;
+      }
+    }
+  }
+
+  @media (max-width: 360px) {
+    width: 350px;
+    grid-template-columns: [col-1] 125px [col-2] 1fr;
+    grid-template-areas:
+      "logo name"
+      "logo viewers"
+      "logo game";
+
+    .name {
+      font-size: 26px;
+    }
+    .logo {
+      height: 125px;
+      width: 125px;
+      img {
+        height: 125px;
+        width: 125px;
       }
     }
   }

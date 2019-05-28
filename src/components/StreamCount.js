@@ -3,6 +3,9 @@ import styled from "styled-components"
 
 const StreamsCountStyled = styled.div`
   #number-of-streamers {
+    text-align: center;
+    font-size: 16px;
+    width: 50px;
     border-radius: 4px;
     border-color: hsl(0, 0%, 80%);
     border-style: solid;
@@ -27,7 +30,6 @@ export default class StreamCount extends Component {
   render() {
     return (
       <StreamsCountStyled>
-        Results:{" "}
         <input
           type="number"
           id="number-of-streamers"
