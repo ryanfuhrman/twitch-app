@@ -1,8 +1,11 @@
 import React, { Component } from "react"
 import axios from "axios"
 import Select from "react-select"
+import styled from "styled-components"
 
-import GamePickerStyled from "./styles/GamePickerStyled"
+const GamePickerStyled = styled.div`
+  width: 100%;
+`
 
 class GamePicker extends Component {
   state = {
@@ -32,7 +35,6 @@ class GamePicker extends Component {
     const searchMatches = []
 
     const searchInput = e.target.value.toLowerCase()
-    // console.log(searchInput)
     const searchLength = searchInput.length
     if (searchLength < 1) return false
     this.state.games.forEach(game => {
