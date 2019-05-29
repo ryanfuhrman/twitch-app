@@ -12,13 +12,11 @@ class MostViewers extends Component {
     game: "",
   }
   componentDidMount() {
-    const client_id = "cjkthp60bf0qp91mn6ifki1h52pic8"
-
     axios({
       url: `https://api.twitch.tv/kraken/streams/?limit=${
         this.state.limit
       }&game=`,
-      headers: { "Client-ID": client_id },
+      headers: { "Client-ID": process.env.TWITCH_KEY },
     }).then(res => {
       const streams = res.data
       this.setState({
@@ -28,8 +26,6 @@ class MostViewers extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    const client_id = "cjkthp60bf0qp91mn6ifki1h52pic8"
-
     if (
       this.state.limit !== prevState.limit ||
       this.state.game !== prevState.game
@@ -38,7 +34,7 @@ class MostViewers extends Component {
         url: `https://api.twitch.tv/kraken/streams/?limit=${
           this.state.limit
         }&game=${this.state.game}`,
-        headers: { "Client-ID": client_id },
+        headers: { "Client-ID": process.env.TWITCH_KEY },
       }).then(res => {
         const streams = res.data
 
