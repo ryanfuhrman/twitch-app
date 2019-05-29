@@ -31,24 +31,6 @@ class GamePicker extends Component {
     })
   }
 
-  handleSearch = e => {
-    const searchMatches = []
-
-    const searchInput = e.target.value.toLowerCase()
-    const searchLength = searchInput.length
-    if (searchLength < 1) return false
-    this.state.games.forEach(game => {
-      const gameLowerCase = game.toLowerCase()
-      const splitGame = gameLowerCase.split("")
-      const gameArray = splitGame.splice(0, searchLength)
-      if (gameArray.length !== searchLength) return false
-
-      if (searchInput === gameArray.join("")) {
-        console.log([...searchMatches, game])
-      }
-    })
-  }
-
   handleGameChange = e => {
     let val
     if (e === null) {

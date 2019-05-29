@@ -5,7 +5,6 @@ import StreamerStyled from "./styles/StreamerStyled"
 class Streamer extends Component {
   handleStatus = status => {
     status = status.substr(0, 60).concat(". . .")
-    console.log(status)
     return status
   }
 
