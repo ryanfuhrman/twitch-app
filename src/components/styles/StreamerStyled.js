@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StreamerStyled = styled.div`
-  padding: 1vw;
+  padding: 5px;
   max-width: 700px;
   margin: 0 auto;
   color: #404040;
@@ -40,14 +40,14 @@ const StreamerStyled = styled.div`
     grid-area: logo;
     height: 218px;
     width: 218px;
-    min-width: 200px;
-    min-height: 200px;
+    /* min-width: 200px;
+    min-height: 200px; */
     cursor: pointer;
     img {
       height: 218px;
       width: 218px;
-      min-width: 200px;
-      min-height: 200px;
+      /* min-width: 200px;
+      min-height: 200px; */
       margin: 0;
       position: relative;
     }
@@ -81,13 +81,13 @@ const StreamerStyled = styled.div`
     .logo {
       height: 175px;
       width: 175px;
-      min-height: 160px;
-      min-width: 160px;
+      /* min-height: 160px;
+      min-width: 160px; */
       img {
         height: 175px;
         width: 175px;
-        min-height: 160px;
-        min-width: 160px;
+        /* min-height: 160px;
+        min-width: 160px; */
       }
     }
   }
@@ -98,13 +98,13 @@ const StreamerStyled = styled.div`
     .logo {
       height: 150px;
       width: 150px;
-      min-height: 125px;
-      min-width: 125px;
+      /* min-height: 125px;
+      min-width: 125px; */
       img {
         height: 150px;
         width: 150px;
-        min-height: 125px;
-        min-width: 125px;
+        /* min-height: 125px;
+        min-width: 125px; */
       }
     }
   }
@@ -158,6 +158,22 @@ const StreamerStyled = styled.div`
       img {
         height: 125px;
         width: 125px;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    width: 310px;
+    grid-template-columns: [col-1] 120px [col-2] 1fr;
+    .name {
+      font-size: 22px;
+    }
+    .logo {
+      height: 110px;
+      width: 110px;
+      img {
+        height: 110px;
+        width: 110px;
       }
     }
   }

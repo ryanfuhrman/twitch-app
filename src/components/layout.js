@@ -34,7 +34,7 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
+          <footer style={{ padding: `5px`, marginLeft: `5px` }}>
             © {new Date().getFullYear()}, Built by
             {` `}
             <a href="https://www.ryanfuhrman.me">Ryan Fuhrman</a>
