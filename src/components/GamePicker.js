@@ -15,7 +15,7 @@ class GamePicker extends Component {
   componentDidMount() {
     axios({
       url: `https://api.twitch.tv/kraken/games/top?limit=100`,
-      headers: { "Client-ID": process.env.TWITCH_KEY },
+      headers: { "Client-ID": process.env.GATSBY_TWITCH_KEY },
     }).then(res => {
       const games = res.data.top
       games.map(result =>

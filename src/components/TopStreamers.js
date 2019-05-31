@@ -16,7 +16,7 @@ class MostViewers extends Component {
       url: `https://api.twitch.tv/kraken/streams/?limit=${
         this.state.limit
       }&game=`,
-      headers: { "Client-ID": process.env.TWITCH_KEY },
+      headers: { "Client-ID": process.env.GATSBY_TWITCH_KEY },
     }).then(res => {
       const streams = res.data
       this.setState({
@@ -34,7 +34,7 @@ class MostViewers extends Component {
         url: `https://api.twitch.tv/kraken/streams/?limit=${
           this.state.limit
         }&game=${this.state.game}`,
-        headers: { "Client-ID": process.env.TWITCH_KEY },
+        headers: { "Client-ID": process.env.GATSBY_TWITCH_KEY },
       }).then(res => {
         const streams = res.data
 
